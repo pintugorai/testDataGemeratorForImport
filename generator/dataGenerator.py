@@ -23,6 +23,7 @@ if __name__ == '__main__':
                 xlsxFileName, propertyData, payloadFile))
 else:
     from ..xlsxImport.pandasImport import Pandasimport
+    from xlsxImport.pandasexport import Pandasexport
     from ..fileUtilities.fileUtility import fileToList
     try:
         testData = Pandasimport.retrieve_xlsx(xlsxFileName)
@@ -46,4 +47,4 @@ for ind in propertyData.index:
             testData[propertyData['header'][ind]] = testData[propertyData['header'][ind]].apply(
                 lambda x: random.choice(payload_list))
 
-print(testData)
+Pandasexport.export_xlsx(testData)

@@ -10,10 +10,7 @@ except:
 
 
 class Pandasexport:
-    def retrieve_xlsx(xlsxDataFrame):
+    def export_xlsx(xlsxDataFrame):
         current_file = os.path.abspath(os.path.dirname(__file__))
-        excelPath = os.path.join(current_file, '../dataFolder/', xlsxFileName)
-        user_xlsx = pd.ExcelFile(excelPath)
-        user_data = pd.read_excel(
-            user_xlsx, 'Sheet1', index_col=None, na_values=['NA'])
-        return user_data
+        exportPath = os.path.join(current_file, '../dataFolder/output.xlsx')
+        xlsxDataFrame.to_excel(exportPath, sheet_name='Sheet_name_1')
