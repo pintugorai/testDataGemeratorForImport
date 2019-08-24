@@ -21,4 +21,4 @@ class PandasIO:
     def export_xlsx(xlsxDataFrame):
         current_file = os.path.abspath(os.path.dirname(__file__))
         exportPath = os.path.join(current_file, '../dataFolder/output.xlsx')
-        xlsxDataFrame.to_excel(exportPath, sheet_name='Sheet_name_1')
+        xlsxDataFrame.to_excel(exportPath, index=False, sheet_name='Data')
